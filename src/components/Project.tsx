@@ -64,7 +64,7 @@ const Project = ({ project }: { project: MyProject }) => {
           priority === 2 ? 'md:order-1 md:mr-6' : 'md:order-2 md:ml-10'
         )}
       >
-        <ul className="flex gap-6">
+        <ul className="flex flex-wrap gap-6">
           {skills?.map((skill) => (
             <li key={skill} className="text-gray-600 dark:text-gray-300">
               {skill}
