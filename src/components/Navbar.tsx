@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react'
+import { useState } from 'react'
 import { ArrowLeftIcon } from './icons'
 import clsx from 'clsx'
 import Link from 'next/link'
@@ -8,15 +8,10 @@ import Sidebar from './Sidebar'
 import useNavbarScroll from '../hooks/useNavbarScroll'
 
 interface NavbarProps {
-  sidebarLinks: {
-    title: string
-    href: string
-    icon: ReactNode
-  }[]
   projectPage?: boolean
 }
 
-const Navbar = ({ sidebarLinks, projectPage }: NavbarProps) => {
+const Navbar = ({ projectPage }: NavbarProps) => {
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false)
   const [visible, isAtTop] = useNavbarScroll()
 
@@ -76,7 +71,6 @@ const Navbar = ({ sidebarLinks, projectPage }: NavbarProps) => {
       <Sidebar
         open={sidebarIsOpen}
         close={() => setSidebarIsOpen(!sidebarIsOpen)}
-        links={sidebarLinks}
       />
     </>
   )

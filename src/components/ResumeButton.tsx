@@ -1,5 +1,3 @@
-import { useContext } from 'react'
-import { ModalContext } from '../utils/ModalProvider'
 import Button from './Button'
 
 interface ResumeButtonProps {
@@ -7,12 +5,14 @@ interface ResumeButtonProps {
 }
 
 const ResumeButton = ({ className }: ResumeButtonProps) => {
-  const setOpen = useContext(ModalContext)
-
   return (
-    <Button className={className} onClick={() => setOpen(true)}>
-      Resume
-    </Button>
+    <a
+      target="_blank"
+      href="https://drive.google.com/file/d/1BWTEgF3uaw0dKmKfHrd4zEDM-vVHRTSo/view?usp=sharing"
+      rel="noopener noreferrer"
+    >
+      <Button className={className}>Resume</Button>
+    </a>
   )
 }
 

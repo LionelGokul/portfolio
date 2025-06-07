@@ -1,4 +1,10 @@
-import { UserIcon, HammerIcon, ClipboardIcon, MailIcon } from './icons'
+import {
+  UserIcon,
+  HammerIcon,
+  ClipboardIcon,
+  MailIcon,
+  WorkExperienceIcon
+} from './icons'
 import useActiveSection from '../hooks/useActiveSection'
 
 const SideNavigation = () => {
@@ -17,6 +23,15 @@ const SideNavigation = () => {
             className={active === 'about' ? 'text-primary-200' : ''}
           >
             <UserIcon className={iconStyles} />
+          </a>
+        </li>
+        <li>
+          <a
+            href="#workExperience"
+            title="workExperience"
+            className={active === 'workExperience' ? 'text-primary-200' : ''}
+          >
+            <WorkExperienceIcon className={iconStyles} />
           </a>
         </li>
         <li>

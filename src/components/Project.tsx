@@ -1,37 +1,40 @@
-import { Thumbnail } from '../types/project'
+import { MyProject } from '../types/project'
 import { ExternalLinkIcon, GithubIcon } from './icons'
 import Image from 'next/image'
-import NextLink from 'next/link'
 import clsx from 'clsx'
-import Link from './Link'
 
-const Project = ({ project }: { project: Thumbnail }) => {
+const Project = ({ project }: { project: MyProject }) => {
   const links = (repoUrl: string, liveUrl: string, className?: string) => (
     <ul className={clsx('flex gap-4', className)}>
-      <li>
-        <a
-          href={repoUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Github repository"
-        >
-          <GithubIcon className="h-7 w-7 fill-primary-800 transition hover:fill-primary-500" />
-        </a>
-      </li>
-      <li>
-        <a
-          href={liveUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Live example"
-        >
-          <ExternalLinkIcon className="h-7 w-7 stroke-primary-800 transition hover:stroke-primary-500" />
-        </a>
-      </li>
+      {repoUrl && (
+        <li>
+          <a
+            href={repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Github repository"
+          >
+            <GithubIcon className="h-7 w-7 fill-primary-800 transition hover:fill-primary-500" />
+          </a>
+        </li>
+      )}
+
+      {liveUrl && (
+        <li>
+          <a
+            href={liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Live example"
+          >
+            <ExternalLinkIcon className="h-7 w-7 stroke-primary-800 transition hover:stroke-primary-500" />
+          </a>
+        </li>
+      )}
     </ul>
   )
 
-  const { title, intro, tags, slug, coverImage, liveUrl, repoUrl, priority } =
+  const { title, coverImage, liveUrl, repoUrl, priority, skills, description } =
     project
 
   return (
@@ -45,17 +48,15 @@ const Project = ({ project }: { project: Thumbnail }) => {
         >
           {links(repoUrl, liveUrl, 'py-2 px-3')}
         </div>
-        <NextLink href={`/projects/${slug}`}>
-          <a>
-            <Image
-              src={coverImage}
-              layout="fill"
-              objectFit="cover"
-              alt="A picture of the project"
-              className="rounded brightness-90 saturate-50 transition group-hover:scale-110 group-hover:saturate-100"
-            />
-          </a>
-        </NextLink>
+        <a>
+          <Image
+            src={coverImage}
+            layout="fill"
+            objectFit="cover"
+            alt="A picture of the project"
+            className="rounded brightness-90 saturate-50 transition group-hover:scale-110 group-hover:saturate-100"
+          />
+        </a>
       </div>
       <div
         className={clsx(
@@ -64,9 +65,9 @@ const Project = ({ project }: { project: Thumbnail }) => {
         )}
       >
         <ul className="flex gap-6">
-          {tags.map((tag) => (
-            <li key={tag} className="text-gray-600 dark:text-gray-300">
-              {tag}
+          {skills?.map((skill) => (
+            <li key={skill} className="text-gray-600 dark:text-gray-300">
+              {skill}
             </li>
           ))}
         </ul>
@@ -77,19 +78,8 @@ const Project = ({ project }: { project: Thumbnail }) => {
           className="mt-4 text-gray-600 dark:text-gray-300"
           data-testid="intro-text"
         >
-          {intro}
+          {description}
         </p>
-        <div className="hidden h-full items-end md:flex">
-          <Link href={`/projects/${slug}`} data-testid="project-page-link">
-            Read more
-          </Link>
-        </div>
-      </div>
-      <div className="order-last mt-4 flex items-center justify-between md:hidden">
-        <div className="flex h-full items-end">
-          <Link href={`/projects/${slug}`}>Read more</Link>
-        </div>
-        {links(repoUrl, liveUrl)}
       </div>
     </li>
   )

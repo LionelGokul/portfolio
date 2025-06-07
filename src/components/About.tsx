@@ -2,13 +2,6 @@ import { GridPattern } from './icons'
 import Image from 'next/image'
 
 const About = () => {
-  const myAge = () => {
-    const birthday = new Date('06/16/2003')
-    const ageDifMs = Date.now() - birthday.getTime()
-    const ageDate = new Date(ageDifMs)
-    return Math.abs(ageDate.getUTCFullYear() - 1970)
-  }
-
   return (
     <section
       className="flex w-full flex-col items-center gap-x-8 pt-28 pb-36 md:flex-row md:pb-48"
@@ -23,24 +16,35 @@ const About = () => {
         </div>
         <div className="mt-4 text-gray-600 dark:text-gray-300">
           <p>
-            Hi, my name is Martin and I am a {myAge()}-year-old who enjoys
-            building clean and maintainable web projects. I&apos;m currently in
-            my first year of computer science at the University of Copenhagen,
-            but my interest in web development started during gymnasium.
+            I still remember the first time I sat in front of a computer. I was
+            instantly captivated by the endless possibilities it offered.
+            Playing games like Pocket Tanks, NFS, and Road Rash only deepened
+            that fascination, but what truly amazed me was realizing that behind
+            every digital world was carefully crafted code.
           </p>
           <br />
+
           <p>
-            I began learning Python during my first year of gymnasium and after
-            getting hooked on it I decided to expand upon my programming skills
-            by taking it as a class. Determined to do something more with my
-            understanding of programming, I decided to take up web development
-            which I&apos;ve been doing ever since.
+            It wasn&apos;t until my seventh semester of college, however, that I
+            discovered my real passion for software development. I needed money
+            for a trip, so I decided to build a single-page web application.
+            From the first line of code to the final result, every step felt
+            like bringing an idea to life. Seeing people actually use the
+            website I created was a moment of pure fulfillment—I knew then that
+            this was what I wanted to do.
           </p>
           <br />
+
           <p>
-            Outside of studying and creating projects I enjoy reading, playing
-            video games and occasionally riding my mountainbike.
+            For me, software development is all about solving puzzles and
+            finding the most elegant solution to a problem. There might be
+            countless ways to fix an issue, but discovering that perfect
+            approach is what excites me the most. And with new tools and
+            technology emerging every day, there&apos;s always something fresh
+            to learn. That constant push to innovate and improve is what keeps
+            me inspired and reminds me why I fell in love with this field.
           </p>
+          <br />
         </div>
       </div>
       <div className="mt-8 max-w-xs pr-5">
@@ -48,7 +52,7 @@ const About = () => {
           <div className="group relative z-10 transition-transform hover:translate-x-3 hover:translate-y-3">
             <div className="relative">
               <Image
-                src="/images/me.png"
+                src="/images/me.jpg"
                 width={500}
                 height={500}
                 alt="A picture of me"

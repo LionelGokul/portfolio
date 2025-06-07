@@ -11,7 +11,7 @@ const Layout = ({ title, description, children }: LayoutProps) => {
   return (
     <>
       <Head>
-        <title>{`${title} | Martin Polley`}</title>
+        <title>{`${title} | Gokul Sekar`}</title>
         <meta name="description" content={description} />
       </Head>
       <main>{children}</main>

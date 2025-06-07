@@ -12,6 +12,10 @@
   width: 40px;
   height: 32px;
 }
+section {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
 
 .burger:after,
 .burger:before {

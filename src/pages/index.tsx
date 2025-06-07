@@ -1,10 +1,4 @@
 import { NextPage } from 'next'
-import {
-  UserIcon,
-  HammerIcon,
-  ClipboardIcon,
-  MailIcon
-} from '../components/icons'
 import { getAllProjectsData } from '../services/projectService'
 import { Project } from '../types/project'
 import useSmoothScroll from '../hooks/useSmoothScroll'
@@ -16,33 +10,12 @@ import About from '../components/About'
 import Projects from '../components/Projects'
 import Skillset from '../components/Skillset'
 import Contact from './../components/Contact'
+import WorkExperiences from '../components/WorkExperiences'
+import { experiencesData, projectsData } from '../services/data'
 
 interface IndexProps {
   projects: Project[]
 }
-
-const sidebarLinks = [
-  {
-    title: 'about',
-    href: '#about',
-    icon: <UserIcon />
-  },
-  {
-    title: 'projects',
-    href: '#projects',
-    icon: <HammerIcon />
-  },
-  {
-    title: 'skillset',
-    href: '#skillset',
-    icon: <ClipboardIcon />
-  },
-  {
-    title: 'contact',
-    href: '#contact',
-    icon: <MailIcon />
-  }
-]
 
 const Index: NextPage<IndexProps> = ({ projects }) => {
   useSmoothScroll()
@@ -50,16 +23,17 @@ const Index: NextPage<IndexProps> = ({ projects }) => {
   return (
     <Layout
       title="Home"
-      description="The personal portfolio of Martin Polley. Web developer who loves working with React and Next.js."
+      description="The personal portfolio of Gokul Sekar. Love for coding and designing a software never ends."
     >
       <div className="transition-colors dark:bg-neutral-700">
         <div className="mx-auto flex max-w-6xl">
           <SideNavigation />
           <div className="w-full px-4 sm:px-8 lg:ml-20">
-            <Navbar sidebarLinks={sidebarLinks} />
+            <Navbar />
             <Header />
             <About />
-            <Projects projects={projects} />
+            <WorkExperiences Experiences={experiencesData} />
+            <Projects projects={projectsData} />
             <Skillset />
             <Contact />
           </div>

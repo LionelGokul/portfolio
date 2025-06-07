@@ -5,12 +5,10 @@ export default class Document extends NextDocument {
     return (
       <Html lang="en">
         <Head>
-          <link rel="shortcut icon" href="/images/favicon.ico" />
           <link
-            rel="icon"
-            type="image/png"
-            sizes="192x192"
-            href="/images/android-icon-192x192.png"
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/images/apple-touch-icon.png"
           />
           <link
             rel="icon"
@@ -21,16 +19,10 @@ export default class Document extends NextDocument {
           <link
             rel="icon"
             type="image/png"
-            sizes="96x96"
-            href="/images/favicon-96x96.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
             sizes="16x16"
             href="/images/favicon-16x16.png"
           />
-          <link rel="manifest" href="/images/manifest.json" />
+          <link rel="manifest" href="/images/site.webmanifest"></link>
           <meta name="theme-color" content="#ffffff" />
         </Head>
         <body>

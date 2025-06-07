@@ -2,13 +2,57 @@ const Skillset = () => {
   const skills = [
     {
       title: 'languages',
-      items: ['HTML', 'CSS', 'javascript (ES6)', 'typescript', 'python']
+      items: [
+        'JavaScript',
+        'TypeScript',
+        'Java',
+        'python',
+        'C#',
+        'PHP',
+        'C',
+        'C++'
+      ]
     },
-    { title: 'frontend technologies', items: ['react', 'next.js'] },
-    { title: 'libraries', items: ['tailwindcss', 'graphql', 'redux (+ RTK)'] },
-    { title: 'testing', items: ['cypress', 'jest', 'react testing library'] },
-    { title: 'version control', items: ['git', 'github'] },
-    { title: 'creative', items: ['figma', 'affinity designer / photo'] }
+    {
+      title: 'Web Development',
+      items: [
+        'React.js',
+        'Node.js',
+        'Express.js',
+        'Next.js',
+        'Django',
+        'Flask',
+        'GraphQL',
+        'ASP .NET',
+        'HTML',
+        'CSS Frameworks: Material UI, Tailwind CSS, etc.',
+        'JQuery'
+      ]
+    },
+    {
+      title: 'Cloud & DevOps',
+      items: ['AWS', 'CI/CD', 'Docker', 'Kubernetes', 'Git', 'GitHub', 'Heroku']
+    },
+    {
+      title: 'Database Management',
+      items: ['MYSQL', 'MongoDB', 'PostgreSQL']
+    },
+    {
+      title: 'Data Science & Machine Learning',
+      items: ['SciKit-learn', 'Pandas', 'NumPY', 'OpenCV']
+    },
+    {
+      title: 'Software Engineering Principles and Practices',
+      items: [
+        'Software Design Patterns',
+        'Software Architecture',
+        'MVC (Model-View-Controller)',
+        'System Design',
+        'REST API',
+        'Agile methodologies',
+        'SDLC (Software Development Life Cycle)'
+      ]
+    }
   ]
 
   return (

@@ -1,41 +1,23 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
-import {
-  GithubIcon,
-  BookmarkIcon,
-  ExternalLinkIcon
-} from '../../components/icons'
+import { GithubIcon, ExternalLinkIcon } from '../../components/icons'
 import { Project as ProjectType } from '../../types/project'
 import {
   getProjectsSlugs,
   getProjectBySlug
 } from '../../services/projectService'
-import highlightjs from 'markdown-it-highlightjs'
-import MarkdownIt from 'markdown-it'
 import Image from 'next/image'
 import Layout from '../../components/Layout'
 import Navbar from '../../components/Navbar'
 import Highlight from '../../components/Highlight'
-import InfoBox from '../../components/InfoBox'
-import Contact from '../../components/Contact'
 import 'highlight.js/styles/atom-one-dark.css'
 
 interface ProjectProps {
   project: ProjectType
-  slugs: string[]
 }
 
-const Project: NextPage<ProjectProps> = ({ project, slugs }) => {
-  const md = new MarkdownIt().use(highlightjs)
-  const content = md.render(project.content)
-
+const Project: NextPage<ProjectProps> = ({ project }) => {
   const words = project.content.trim().split(/\s+/).length
   const readTime = Math.ceil(words / 225)
-
-  const sidebarLinks = slugs.map((slug) => ({
-    title: slug,
-    href: slug === project.slug ? '#' : `/projects/${slug}`,
-    icon: <BookmarkIcon className="h-7" />
-  }))
 
   const links = (
     <ul className="mt-6 flex gap-4">
@@ -72,7 +54,7 @@ const Project: NextPage<ProjectProps> = ({ project, slugs }) => {
 
   return (
     <Layout title={project.title} description={project.intro}>
-      <Navbar sidebarLinks={sidebarLinks} projectPage />
+      <Navbar projectPage />
       <div className="transition-colors xl:dark:bg-neutral-700">
         <div className="inner-shadow relative mx-auto flex h-[450px] max-w-screen-2xl flex-col justify-end md:h-[550px] xl:grid xl:h-[650px] xl:grid-cols-2">
           <div className="mb-8 px-4 sm:px-8 xl:flex xl:flex-col xl:justify-center">
@@ -107,29 +89,7 @@ const Project: NextPage<ProjectProps> = ({ project, slugs }) => {
           </div>
         </div>
       </div>
-      <div className="bg-white transition-colors dark:bg-neutral-700">
-        <div className="z-50 mx-auto max-w-3xl bg-white px-4 pt-4 transition-colors dark:bg-neutral-700">
-          <InfoBox className="mt-2">
-            <p className="text-sm leading-relaxed">
-              What you are about to read is a description of the project, to
-              hopefully answer why and how I built this project, what I learned,
-              what problems I faced and how I overcame them, as well as what I
-              would do differently next time, and how I would make it better.
-            </p>
-          </InfoBox>
-          <div className="xl:hidden">{links}</div>
-          <p className="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300 xl:hidden">
-            {project.intro}
-          </p>
-          <article
-            dangerouslySetInnerHTML={{ __html: content }}
-            className="prose mx-auto mt-6 max-w-2xl prose-a:text-accent-500 prose-pre:bg-[#282c34] prose-img:mx-auto dark:prose-invert dark:prose-a:text-accent-200 prose-img:sm:max-h-[450px]"
-          />
-          <div className="mx-auto max-w-2xl">
-            <Contact />
-          </div>
-        </div>
-      </div>
+      <div className="bg-white transition-colors dark:bg-neutral-700"></div>
     </Layout>
   )
 }

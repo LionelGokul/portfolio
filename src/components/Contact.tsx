@@ -16,17 +16,17 @@ const Contact = () => {
       </div>
       <div className="mt-12">
         <p className="max-w-lg text-gray-600 dark:text-gray-300">
-          I&apos;m not currently looking for new opportunities but you&apos;re
-          more than welcome to reach out to me for a chat! I&apos;m also active
-          on a few different social media platforms, and you can find links to
-          those profiles below.
+          I&apos;m always open to discussing new projects, creative ideas, or
+          opportunities to be part of your visions. Feel free to reach out if
+          you&apos;d like to learn more about my work or how we can collaborate
+          on an upcoming project!
         </p>
         <div className="mt-10 flex flex-col justify-center gap-y-6 sm:flex-row sm:items-center sm:justify-start">
           <div className="flex gap-4">
             <ResumeButton />
             <Button
               className="after:left-[-150%]"
-              onClick={() => router.push('mailto:martin.polley460@gmail.com')}
+              onClick={() => router.push('mailto:lionelgokul1998@gmail.com')}
             >
               Mail
             </Button>
@@ -35,7 +35,7 @@ const Contact = () => {
             <ul className="ml-4 flex items-center gap-4">
               <li>
                 <a
-                  href="https://github.com/MartinP460"
+                  href="https://github.com/LionelGokul"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Github profile"
@@ -45,7 +45,7 @@ const Contact = () => {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/in/martin-polley-37b907247/"
+                  href="https://www.linkedin.com/in/sgokul98/"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="LinkedIn profile"

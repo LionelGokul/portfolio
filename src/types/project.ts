@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image'
+
 export type Project = {
   title: string
   intro: string
@@ -6,8 +8,16 @@ export type Project = {
   coverImage: string
   liveUrl: string
   repoUrl: string
-  priority: 1 | 2 | 3
   content: string
+}
+export type MyProject = {
+  title: string
+  description: string
+  skills: string[]
+  coverImage: StaticImageData
+  liveUrl: string
+  repoUrl: string
+  priority: Number
 }
 
 export type Thumbnail = Omit<Project, 'content'>

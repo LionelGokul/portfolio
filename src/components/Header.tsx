@@ -14,19 +14,20 @@ const Header = () => {
         className="mt-3 flex max-w-fit flex-col whitespace-nowrap rounded bg-primary-800 px-2 pt-1 pb-3 font-mono text-5xl
         font-semibold tracking-tight text-white shadow-lg dark:font-bold sm:flex-row sm:text-5xl lg:text-6xl"
       >
-        <span className="mr-5">{'<Martin'}</span>
-        <span>{'Polley />'}</span>
+        <span className="mr-5">{'<Gokul'}</span>
+        <span>{'Sekar />'}</span>
       </div>
       <h2 className="mt-4 font-heading text-5xl font-bold text-gray-600 dark:text-gray-300 sm:text-5xl lg:text-6xl">
-        I build web projects.
+        The urge to write code never ends.
       </h2>
       <p className="mt-8 max-w-2xl text-gray-600 dark:text-gray-300">
-        I&apos;m a passionate web developer from{' '}
-        <Highlight text="Copenhagen, Denmark" /> focusing on frontend
-        development. I enjoy working in React and Next.js to build applications
-        that solve real problems. I&apos;m not currently looking for new
-        opportunities but I&apos;m always down for a chat, so feel free to reach
-        out.
+        As a seasoned <Highlight text="Software Developer " />
+        with a rich history of contributions across dynamic roles in startup
+        environments, I bring a fervent passion for leveraging new technologies
+        to solve complex problems and enhance user experiences. My career is
+        distinguished by a relentless pursuit of innovation, characterized by
+        enhancing application performance, scalability, and implementing
+        strategic data-driven solutions that drive substantial business growth.
       </p>
       <Button className="mt-8" onClick={() => router.push('#projects')}>
         Projects
